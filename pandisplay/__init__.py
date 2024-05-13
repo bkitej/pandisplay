@@ -1,5 +1,4 @@
 import pandas
-from functools import partial
 from IPython.display import display
 
 display_options = {
@@ -23,9 +22,9 @@ def patch():
             display(self)
     
     pandas.core.generic.NDFrame.display = _display
-    pandas.core.generic.NDFrame.long = partial(_display, 'long')
-    pandas.core.generic.NDFrame.wide = partial(_display, 'wide')
-    pandas.core.generic.NDFrame.uncut = partial(_display, 'uncut')
-    pandas.core.generic.NDFrame.full = partial(_display, *display_options)
+    pandas.core.generic.NDFrame.long = lambda frame: _display(frame, 'long')
+    pandas.core.generic.NDFrame.wide = lambda frame: _display(frame, 'wide')
+    pandas.core.generic.NDFrame.uncut = lambda frame: _display(frame, 'uncut')
+    pandas.core.generic.NDFrame.full = lambda frame: _display(frame, *display_options)
 
 __all__ = ['patch']

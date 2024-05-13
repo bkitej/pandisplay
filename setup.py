@@ -6,8 +6,7 @@ setup(
     version='0.1.0',
     packages=find_packages(),
     description='Pandas display methods for DataFrame visualization in Jupyter Notebooks.',
-    author='Ben Johnson',
-    author_email='bkitej@gmail.com',
+    author='bkitej',
     install_requires=[
         'pandas',
         'ipython'
