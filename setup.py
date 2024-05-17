@@ -3,7 +3,7 @@ from setuptools import setup
 
 setup(
     name='pandisplay',
-    version='0.1.0',
+    version='2.0.0',
     packages=find_packages(),
     description='Pandas display methods for DataFrame visualization in Jupyter Notebooks.',
     author='bkitej',
